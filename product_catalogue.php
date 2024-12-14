@@ -5,14 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OG Tech PC - Product Catalogue</title>
+    <title>OG WAR RIG - Product Catalogue</title>
     <?php 
       require_once "header.php";
       require_once "includes/product_catalogue.inc.php";
     ?>
   </head>
 
-  <main >
+  <style>
+    body {
+      background-image: url('static/images/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    </style>
+  
+  <main >  
     <div class="row" style="padding-top: 15px;">
       <div class="col s2 center">
 
@@ -21,7 +31,7 @@
             <input type="hidden" name="query" value="<?php if(isset($_GET["query"])) 
               echo($_GET["query"]); ?>">
 
-            <div class="section" style="margin-bottom: 100px;">
+            <div class="section" style="margin-bottom: 50px;">
               <div class="col unglow">
                 <ul id="filter_dropdown" class="dropdown-content black">
                   <li><a class="cyan-text page-title" onclick="select_category(this)">Clear</a></li>
@@ -43,7 +53,7 @@
               </div>
             </div>
 
-            <div class="section" style="margin-bottom: 100px">
+            <div class="section" style="margin-bottom: 50px;"> <!-- Mengubah margin-bottom menjadi 50px -->
               <div class="col unglow">
                 <ul id="sort_dropdown" class="dropdown-content black">
                   <li><a class="page-title" onclick="select_sort(this)">Clear</a></li>

@@ -1,13 +1,12 @@
 <?php
-  require_once "includes/class_autoloader.php";
-  if (isset($_GET["member_id"]))
-  {
+require_once "includes/class_autoloader.php";
+if (isset($_GET["member_id"])) {
     /** @var int $memberID */
     $memberID = $_GET["member_id"];
     $member = Member::CreateMemberFromID($memberID);
     $orders = $member->getOrders();
     $orderCount = count($orders);
-  }
+}
 ?>
 
 <div class="row" style="margin-top: 100px; margin-bottom: 50px; border-bottom: 3px solid #bbb">
@@ -15,12 +14,10 @@
 </div>
 
 <?php
-  if ($orderCount <= 0) 
+if ($orderCount <= 0) {
     echo("<h5 class='grey-text page-title'>There are no orders yet. How about 
     <a href='product_catalogue.php?query='>making some orders</a>? :)</h5>");
-
-  else
-  {
+} else {
     echo("
     <div class='row'>
       <div class='title-card col s8' style='height: 55px; margin-bottom: 10px'>
@@ -32,72 +29,72 @@
     </div>
     ");
 
-    for ($i=0; $i < $orderCount; $i++)
-    {
-      $idx = $i+1;
+    for ($i = 0; $i < $orderCount; $i++) {
+        $idx = $i + 1;
 
-      $sql = "SELECT P.OrderID, P.PaymentDate, OI.OrderID FROM Payment P, OrderItems OI
-      WHERE P.OrderID = OI.OrderID";
-      $dbh = new Dbhandler();
-      $result = $dbh->conn()->query($sql);
-      while ($row = $result->fetch_assoc()) {
-        $paymentDate = $row["PaymentDate"];
-      }
+        $sql = "SELECT P.OrderID, P.PaymentDate, OI.OrderID FROM Payment P, OrderItems OI
+        WHERE P.OrderID = OI.OrderID";
+        $dbh = new Dbhandler();
+        $result = $dbh->conn()->query($sql);
+        while ($row = $result->fetch_assoc()) {
+            $paymentDate = $row["PaymentDate"];
+        }
 
-      echo("<h5 class='white-text page-title'>#$idx Paid: $paymentDate</h5>");
-      // row starting point
-      echo("<div class='row'>");
-      // prev order list starting point
-      echo("<div class='col s8'> <ul class='collapsible popout' id='cart'>");
+        echo("<h5 class='white-text page-title'>#$idx Paid: $paymentDate</h5>");
+        // row starting point
+        echo("<div class='row'>");
+        // prev order list starting point
+        echo("<div class='col s8'> <ul class='collapsible popout' id='cart'>");
 
-      $order = $orders[$i];
-      $orderID = $order->getOrderID();
-      $orderItems = $order->getOrderItems();
-      $orderItemCount = count($orderItems);
+        $order = $orders[$i];
+        $orderID = $order->getOrderID();
+        $orderItems = $order->getOrderItems();
+        $orderItemCount = count($orderItems);
 
-      $sumTotal = 0;
-      for ($o=0; $o < $orderItemCount; $o++)
-      {
-        $orderItem = $orderItems[$o];
-        $item = new Item($orderItem->getItemID());
-        generateBoughtItem($item, $orderItem, $memberID);
+        $sumTotal = 0;
+        for ($o = 0; $o < $orderItemCount; $o++) {
+            $orderItem = $orderItems[$o];
+            $item = new Item($orderItem->getItemID());
+            generateBoughtItem($item, $orderItem, $memberID);
 
-        $quantity = $orderItem->getQuantity();
-        $price = $orderItem->getPrice();
-        $sumTotal += $price * $quantity;
-      }
+            $quantity = $orderItem->getQuantity();
+            $price = $orderItem->getPrice();
+            $sumTotal += $price * $quantity;
+        }
 
-      if ($sumTotal >= 200){
-        $displayShipping = 0;
-        $displaySVoucher = " <span class='yellow-text'>(Shipping voucher applied)</span>";
-      }
-      else if ($sumTotal < 200){
-        $displayShipping = 25;
-        $displaySVoucher = "";
-      } 
-      if ($displayShipping === 0) $displayShipping = "<span class='underline'>RM$displayShipping</span>";
-      else $displayShipping = "RM$displayShipping";
+        // Calculate shipping and promo discounts
+        if ($sumTotal >= 200000) {
+            $displayShipping = 0;
+            $displaySVoucher = " <span class='yellow-text'>(Shipping voucher applied)</span>";
+        } else {
+            $displayShipping = 25000;
+            $displaySVoucher = "";
+        }
 
-      if ($sumTotal >= 2000){
-        $shippingTotal = $sumTotal - 100;
-        $displayPVoucher = "<span class='underline'>-RM100</span> <span class='yellow-text'>(Promo voucher applied)</span>";
-      }
-      else if ($sumTotal >= 200 && $sumTotal < 2000){ 
-        $shippingTotal = $sumTotal;
-        $displayPVoucher = "None (min spend not reached)";
-      }
-      else if ($sumTotal < 200){ 
-        $shippingTotal = $sumTotal + 25;
-        $displayPVoucher = "None (min spend not reached)";
-      }
-      $sumTotal = number_format($shippingTotal, 2);
+        if ($displayShipping === 0) {
+            $displayShippingFormatted = "<span class='underline'>Rp.0</span>";
+        } else {
+            $displayShippingFormatted = "Rp." . number_format($displayShipping, 0, ',', '.');
+        }
 
-      // order items list closing point
-      echo("</ul></div>");
+        if ($sumTotal >= 2000000) {
+            $promoDiscount = 100000;
+            $displayPVoucher = "<span class='underline'>-Rp.100.000</span> <span class='yellow-text'>(Promo voucher applied)</span>";
+        } else {
+            $promoDiscount = 0;
+            $displayPVoucher = "None (min spend not reached)";
+        }
 
-      generateOrderSum($orderItemCount, $sumTotal, $displayShipping, $displaySVoucher, $displayPVoucher);
+        $shippingTotal = $sumTotal - $promoDiscount + $displayShipping;
+        $sumTotalFormatted = "Rp." . number_format($shippingTotal, 0, ',', '.');
 
-      // row closing point
-      echo("</div>");
+        // order items list closing point
+        echo("</ul></div>");
+
+        generateOrderSum($orderItemCount, $sumTotalFormatted, $displayShippingFormatted, $displaySVoucher, $displayPVoucher);
+
+        // row closing point
+        echo("</div>");
     }
-  }
+}
+?>

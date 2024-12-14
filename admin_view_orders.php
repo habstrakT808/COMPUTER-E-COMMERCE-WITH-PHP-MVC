@@ -4,7 +4,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OG Tech PC - Admin View Orders</title>
+  <title>OG War Rig - Admin View Orders</title>
+  <style>
+    body {
+      background-image: url('static/images/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
 </head>
 <?php
   include "header.php";

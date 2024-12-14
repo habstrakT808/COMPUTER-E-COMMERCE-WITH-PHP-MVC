@@ -4,7 +4,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OG Tech PC - Payment</title>
+  <title>OG WAR RIG - Payment</title>
+  <style>
+    body {
+      background-image: url('static/images/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
   <?php 
     include "header.php"; 
     require_once "includes/class_autoloader.php";
@@ -17,9 +26,10 @@
       <?php include "static/pages/cart_items.php"; ?>
     </div>
     <div class="selectable-card grey darken-4" id="no-hover">
-      <div class="row">
-        <h4 class="orange-text bold" style="padding-top: 10px;">Payment</h4>
-      </div>
+    <div class="row">
+  <h4 class="orange-text bold" style="padding-top: 10px; margin-left: 63px;">Payment</h4>
+</div>
+
 
       <form class="row white-text"
         action="payment.php?order_id=<?php echo($_GET["order_id"]) ?>&member_id=<?php echo($_GET["member_id"]) ?>&view_order=1"

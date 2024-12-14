@@ -5,7 +5,7 @@ class InitDB extends Dbhandler{
   private function CreateNeededTables() {
     $tables = array();
 
-    //Members table
+    // Members table
     array_push(
       $tables, "CREATE TABLE IF NOT EXISTS Members(
         MemberID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -65,13 +65,14 @@ class InitDB extends Dbhandler{
         AddedDatetime DATETIME NOT NULL,
         Feedback VARCHAR(512),
         Rating INT,
-        RatingDateTime DATETIME
+        RatingDateTime DATETIME DEFAULT CURRENT_TIMESTAMP
       )"
     );
 
     // execute table creation sql one by one
-    for ($i=0; $i < count($tables); $i++)
+    for ($i=0; $i < count($tables); $i++) {
       $this->conn()->query($tables[$i]);
+    }
   }
 
   public function initDbExec() {

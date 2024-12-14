@@ -5,6 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OG Tech - Admin Panel</title>
+  <style>
+    body {
+      background-image: url('static/images/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
   <?php 
     include "header.php";
     include "static/pages/side_nav.html";

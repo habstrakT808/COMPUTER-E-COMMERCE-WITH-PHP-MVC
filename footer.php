@@ -1,8 +1,8 @@
 <footer class="page-footer" style="margin-top: 120px; box-shadow: 0px 0px 2px white; background-color: rgb(17,17,17)">
   <div class="row wide-container">
     <div class="col s3">
-      <h4 class="white-text bold underline">OG Tech PC</h4>
-      <p class="grey-text text-lighten-4">Your favorite online PC store.</p>
+      <h4 class="white-text bold underline">OG WAR RIG</h4>
+      <p class="grey-text text-lighten-4">Best war setup for your dream.</p>
     </div>
     <div class="col s2">
       <h5 class="white-text bold"  style=' text-decoration: underline'>Support</h5>
@@ -20,11 +20,10 @@
     <div class="col s2">
       <h5 class="white-text bold">Find Us</h5>
       <p class="bold">
-        Monday to Sunday : <br> 11.00am to 8.00pm
+        Monday to Sunday : <br> 10.00am to 8.00pm
       </p>
-      <p class="bold">
-        B-2-16, SD2, Dataran SD PJU9, <br>
-        Jalan Dataran SD 2, Bandar <br> Sri Damansara, 52200 KL
+      <p class="bold"><br>
+        Jalan Dr. Devun Awor Awor Mantab, Grobogan <br> Jawa Tengah, Indonesia
       </p>
     </div>
     <div class="col s2">
@@ -36,13 +35,15 @@
         <i class="fa fa-instagram fa-fw"></i> Instagram
       </a>
     </div>
-    <div class="col s3">
-      <h5 class="white-text bold ">Our Partners</h5>
-      <img src="static/images/Partners.png" />
-    </div>
+    
+
+<div class="col s3" style="display: flex; align-items: center; justify-content: flex-end;">
+  <img src="static/images/Partners.png" style="margin-left: 10px;" />
+</div>
+
   </div>
   <div class="footer-copyright" style="padding-bottom: 20px;">
-    <div class="wide-container underline">© 2021 OG Tech PC All rights reserved.</div>
+    <div class="wide-container underline">© 2024 OG War Rig All rights reserved.</div>
   </div>
 
   <script>

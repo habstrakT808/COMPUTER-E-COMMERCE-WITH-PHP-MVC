@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <title>OG Tech - Sign Up</title>
+<style>
+    body {
+      background-image: url('static/images/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
 <?php include "header.php"; ?>
 
 <form action="includes/signup.inc.php" method="POST">

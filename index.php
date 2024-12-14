@@ -4,7 +4,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OG Tech PC - Landing Page</title>
+  <title>OG War Rig - Landing Page</title>
+  <style>
+    body {
+      background-image: url('static/images/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
   <?php 
     require "header.php"; 
     require_once "includes/class_autoloader.php";
@@ -21,23 +30,23 @@
         <img src="./static/images/carousel_1.gif"> 
         <div class="caption center-align">
           <h3></h3>
-          <h5 class="light grey-text text-lighten-3">Build your dream setup with Us.</h5>
+          <h3 class="bold light grey-text text-lighten-3">Build your dream setup with Us.</h3>
         </div>
       </li>
       <li>
         <img src="./static/images/category_3.jpg"> 
         <div class="caption center-align">
-          <h3 class="bold page-title">At OG Tech</h3>
+          <h3 class="bold page-title">At OG WAR RIG</h3>
           <h5 class="bold page-title">From pc to peripherals, we got u covered.</h5>
         </div>
       </li>
-      <li>
+      <!-- <li>
         <img src="static/images/Banner-Rebate-1.jfif"> 
-      </li>
+      </li> -->
       <li>
         <img src="./static/images/carousel_3.jpg"> 
         <div class="caption center-align">
-          <h3 class="bold green-text page-title">RTX ON</h3>
+          <h1 class="bold green-text page-title">RTX ON</h1>
         </div>
       </li>
       <li>
@@ -58,7 +67,7 @@
           <a href="product_catalogue.php?category=0" class="hoverable">
             <div class="selectable-card hoverable" style="width: 300px; margin: 50px;">
                 <img class="hoverable" src="static/images/category_1.gif"/>
-              <h5 class="white-text center bold hoverable">PC PACKAGES</h5>
+              <h5 class="white-text center bold hoverable" style="margin-top: 1px;">PC PACKAGES</h5>
             </div>
           </a>
         </div>
@@ -67,7 +76,7 @@
           <a href="product_catalogue.php?category=1">
             <div class="selectable-card" style="width: 300px; margin: 50px;">
                 <img src="./static/images/category_3.jpg"/>
-              <h5 class="white-text center bold" style="margin-top : 120px">MONITOR & AUDIO</h5>
+              <h5 class="white-text center bold" style="margin-top : 100px">MONITOR & AUDIO</h5>
             </div>
           </a>
         </div>
@@ -76,7 +85,7 @@
           <a href="product_catalogue.php?category=2">
             <div class="selectable-card" style="width: 300px; margin: 50px;">
                 <img src="./static/images/category_2.gif"/>
-              <h5 class="white-text center bold">PERIPHERALS</h5>
+              <h5 class="white-text center bold" style="margin-top: 1px;">PERIPHERALS</h5>
             </div>
           </a>
         </div>
@@ -88,7 +97,7 @@
     <div class="wide-container">
       <h3 class="white-text center">BUILT BY ENTHUSIASTS FOR ENTHUSIASTS</h3>
       <h5 class="white-text center">
-        At <b class="orange-text">OG Tech PC</b>, We are a team of serious gamers and overclockers with a passion towards customized and fast PCs.
+        At <b class="orange-text">OG WAR RIG</b>, We are a team of serious gamers and overclockers with a passion towards customized and fast PCs.
       </h5>
     </div>
   </div>
@@ -107,12 +116,12 @@
       <h5 class="white-text center">States Covered</h5>
     </div>
     <div class="grid">
-      <h1 class="count red-text text-darken-4 bold center">100</h1>
+      <h1 class="count red-text text-darken-4 bold center">100</h5>
       <h5 class="white-text center">% Satisfaction guaranteed</h5>
     </div>
   </div>
 
-  <h3 class="white-text center">OG Tech PC - White PC Build</h3>
+  <h3 class="white-text center">OG War Rig - White PC Build</h3>
   <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'" style="margin-bottom: 100px">
     <img src="static/images/ice_pc.png" style="cursor:pointer; display:block; margin: 0 auto; " />
   </div>
@@ -199,8 +208,8 @@
     </div>
   </div>
 
-  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-  <div class="elfsight-app-dcc4934e-3eb0-4e18-98af-67fd2f034df1"></div>
+  <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-8205cdc9-1641-4846-baa7-3561f51dcccd" data-elfsight-app-lazy></div>
 
   <?php require "footer.php"; ?>
 </body>

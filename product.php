@@ -21,9 +21,19 @@
       $name = $item->getName(); 
     }
   ?>
-  <title>OG Tech PC — <?php echo htmlspecialchars($name) ?></title>
+  <title>OG WAR RIG — <?php echo htmlspecialchars($name) ?></title>
 </head>
 <body>
+
+<style>
+    body {
+      background-image: url('static/images/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    </style>
 
   <?php 
     if (isset($_GET["item_id"])){
@@ -34,7 +44,7 @@
       $description = $item->getDescription();
       $quantityInStock = $item->getQuantityInStock();
       $price = $item->getSellingPrice();
-      $displayPrice = "RM" . number_format($price, 2);
+      $displayPrice = "Rp." . number_format($price, 2);
       $category = $item->getCategory();
       $category = Item::CATEGORY[$category];
 

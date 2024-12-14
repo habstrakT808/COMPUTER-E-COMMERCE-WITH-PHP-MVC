@@ -209,7 +209,7 @@ class Admin extends Dbhandler{
       $category = $row["Category"];
       $category = Item::CATEGORY_ICON[(int)$category];
       $sellingprice = $row["SellingPrice"];
-      $sellingprice = "RM ". number_format($sellingprice, 2);
+      $sellingprice = "Rp. ". number_format($sellingprice, 2);
       $quantityinstock = $row["QuantityInStock"];
 
       echo(

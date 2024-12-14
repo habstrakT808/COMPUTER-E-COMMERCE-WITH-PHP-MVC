@@ -1,6 +1,15 @@
 <!DOCTYPE html>
+<style>
+    body {
+      background-image: url('static/images/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
 <html lang="en">
-<title>OG Tech PC - Cart</title>
+<title>OG War Rig - Cart</title>
 <?php include "header.php"; ?>
 
 <div class="wide-container">

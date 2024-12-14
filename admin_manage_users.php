@@ -5,6 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OG Tech - Manage Users Panel</title>
+  <style>
+    body {
+      background-image: url('static/images/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
   <?php
     include "header.php"; 
     include "static/pages/side_nav.html";
@@ -96,54 +105,73 @@
     <div class="rounded-card-parent" style="margin-top: 100px">
       <div class="card rounded-card">
         <div class="card-content">
-          <span class="card-title orange-text bold">Create User</span>
+          <span class="card-title orange-text bold center-align"style="font-size: 24px; font-weight: bold;">Create User</span>
           <form id="create" name="create" action="" method="post">
-            <div class="row">
-              <div class="input-field col s8 white-text">
-                <i class="material-icons prefix">account_circle</i>
-                <input name="username" id="username" type="text" class="validate white-text" minlength="5" maxlength="12">
-                <span class="helper-text grey-text" data-error="Min 5, Max 12 characters" data-success="Min 5, Max 12 characters">Min 5, Max 12 characters</span>
-                <label for="username" class="white-text"> Username</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s8 white-text">
-                <i class="material-icons prefix"> password</i>
-                <input name="pwd" id="pwd" type="password" class="validate white-text" minlength="8" maxlength="20">
-                <span class="helper-text grey-text" data-error="Min 8, Max 20 characters" data-success="Min 8, Max 20 characters">Min 8, Max 20 characters</span>
-                <label for="pwd" class="white-text"> Password</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s8 white-text">
-                <i class="material-icons prefix"> password</i>
-                <input name="repeat_pwd" id="repeat_pwd" type="password" class="validate white-text" maxlength="14">
-                <label for="repeat_pwd" class="white-text"> Repeat Password</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s8 white-text">
-                <i class="material-icons prefix white-text">assignment_ind</i>
-                <select id="level" name="level">
-                  <option value="" disabled selected>Choose your option</option>
-                  <option value=1>Member</option>
-                  <option value=2>Admin</option>
-                </select>
-                <label class="white-text">Privilege Level</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s8 white-text">
-                <i class="material-icons prefix">email</i>
-                <input name="email" id="email" type="email" class="validate white-text" maxlength="25">
-                <label for="email" class="white-text">Email</label>
-                <span class="helper-text white-text" data-error="wrong" data-success="correct"></span>
-                <div id="message" class="errormsg">
-              
-                </div>
-              </div>
-            </div>
-            <input class="btn orange btn-block z-depth-5" type="submit" name="submit_user" id="submit_user" value="Create User">
+          <div class="row">
+    <div class="col s12 m6 offset-m3"> <!-- Menambah class col s12 untuk mendukung responsivitas dan class offset-m3 untuk membuat div berada di tengah secara horizontal pada medium screen -->
+        <div class="input-field white-text center-align"> <!-- Menghapus class col s8 karena sudah tidak diperlukan -->
+            <i class="material-icons prefix">account_circle</i>
+            <input name="username" id="username" type="text" class="validate white-text" minlength="5" maxlength="12">
+            <span class="helper-text grey-text" data-error="Min 5, Max 12 characters" data-success="Min 5, Max 12 characters">Min 5, Max 12 characters</span>
+            <label for="username" class="white-text"> Username</label>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col s12 m6 offset-m3"> <!-- Menambah class col s12 untuk mendukung responsivitas dan class offset-m3 untuk membuat div berada di tengah secara horizontal pada medium screen -->
+        <div class="input-field white-text center-align"> <!-- Menghapus class col s8 karena sudah tidak diperlukan -->
+            <i class="material-icons prefix">password</i> <!-- Memperbaiki typo -->
+            <input name="pwd" id="pwd" type="password" class="validate white-text" minlength="8" maxlength="20">
+            <span class="helper-text grey-text" data-error="Min 8, Max 20 characters" data-success="Min 8, Max 20 characters">Min 8, Max 20 characters</span>
+            <label for="pwd" class="white-text"> Password</label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m6 offset-m3">
+        <div class="input-field white-text center-align">
+            <i class="material-icons prefix">password</i>
+            <input name="repeat_pwd" id="repeat_pwd" type="password" class="validate white-text" maxlength="14">
+            <label for="repeat_pwd" class="white-text"> Repeat Password</label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m6 offset-m3">
+        <div class="input-field white-text"> <!-- Menghapus class center-align -->
+            <i class="material-icons prefix white-text">assignment_ind</i>
+            <select id="level" name="level">
+                <option value="" disabled selected>Choose your option</option>
+                <option value=1>Member</option>
+                <option value=2>Admin</option>
+            </select>
+            <label class="white-text">Privilege Level</label>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12 m6 offset-m3">
+        <div class="input-field white-text center-align">
+            <i class="material-icons prefix">email</i>
+            <input name="email" id="email" type="email" class="validate white-text" maxlength="25">
+            <label for="email" class="white-text">Email</label>
+            <span class="helper-text white-text" data-error="wrong" data-success="correct"></span>
+            <div id="message" class="errormsg"></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m6 offset-m3 center-align"> <!-- Menambah class center-align untuk membuat tombol berada di tengah -->
+        <input class="btn orange btn-block z-depth-5" type="submit" name="submit_user" id="submit_user" value="Create User">
+    </div>
+</div>
+
+
+</div>
+            
           </form>
         </div>
       </div> 

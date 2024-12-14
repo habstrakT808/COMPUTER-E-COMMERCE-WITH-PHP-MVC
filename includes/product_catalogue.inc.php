@@ -70,54 +70,58 @@
         $image = $item->getImage();
         $name = $item->getName();
         $price = $item->getSellingPrice();
-        $price = "RM" . number_format($price, 2);
+        $price = "Rp." . number_format($price, 2);
 
         $hasReviews = $item->HasReviews();
         $avgRatings = $item->getAvgRatings();
 
-        echo(
-          "
+        echo("
           <div class='col s3'>
             <a href='product.php?item_id=$itemID'>
-              <div class='selectable-card' style='height: 480px; min-width: 300px'>
-                <img class='shadow-img center' src='product_images/$image' style='height: 300px; max-width: 300px; display: block; margin: 0 auto; object-fit:scale-down;'>
+              <div class='selectable-card' style='height: 480px; min-width: 300px; display: flex; flex-direction: column; justify-content: space-between; padding: 20px 0;'> <!-- Menambahkan display: flex; flex-direction: column; justify-content: space-between; -->
+                <div style='flex-grow: 1;'> <!-- Memberikan ruang fleksibel pada bagian atas untuk menghindari gambar menempel dengan kartu -->
+                  <img class='shadow-img center' src='product_images/$image' style='height: 300px; max-width: 300px; display: block; margin: 0 auto; object-fit:scale-down;'>
+                </div>
                 <h6 class='center bold white-text'>$name</h6>
-                <table class='center'>
-                  <tbody class='center'>
-                    <h6 class='amber-text' style='padding-top: 60px'>$price</h6>
-                    <tr>");
+                <div class='center' style='margin-bottom: 
+                10px;'> <!-- Menggunakan div baru untuk harga dan rating -->
+                  <h6 class='amber-text'>$price</h6>
+                  ");
 
-                    if ($hasReviews)
-                    {
-                      $intRating = $avgRatings * 5 / 100;
-                      $reviews = $item->GetReviews();
-                      $reviewCount = count($reviews);
+                  if ($hasReviews) {
+                    $intRating = $avgRatings * 5 / 100;
+                    $reviews = $item->GetReviews();
+                    $reviewCount = count($reviews);
 
-                      if ($intRating >= 10) {
-                        $intRating = $intRating / $reviewCount;
-                        $intRating = number_format((float)$intRating, 2, '.', '');
-                        $avgRatings = $intRating * 20;
-                      }
-                      echo(
-                        "$intRating
-                        <div class='ratings' style='padding-bottom: 5px'>
-                          <div class='empty-stars'></div>
-                          <div class='full-stars' style='width: $avgRatings%'></div>
-                        </div>"
-                      );
-                    } else echo("- | ");
-                    if ($hasReviews) echo(" | $reviewCount Ratings");
-                      else echo("No ratings yet");
-
-                    if ($item->checkSoldCount()){
-                      echo(" | " . $item->checkSoldCount());
-                      echo(" Sold");
+                    if ($intRating >= 10) {
+                      $intRating = $intRating / $reviewCount;
+                      $intRating = number_format((float)$intRating, 2, '.', '');
+                      $avgRatings = $intRating * 20;
                     }
-                    else echo(" | 0 Sold");
+                    echo("
+                      <div class='ratings' style='padding-top: 1px;'> <!-- Penyesuaian padding untuk rating -->
+                        <div class='empty-stars'></div>
+                        <div class='full-stars' style='width: $avgRatings%'></div>
+                      </div>
+                      ");
+                  } else {
+                    echo(" | ");
+                  }
+                  if ($hasReviews) {
+                    echo(" | $reviewCount Ratings");
+                  } else {
+                    echo("No ratings yet");
+                  }
 
-                  echo("</tr>
-                  </tbody>
-                </table>
+                  if ($item->checkSoldCount()){
+                    echo(" | " . $item->checkSoldCount());
+                    echo(" Sold");
+                  } else {
+                    echo(" | 0 Sold");
+                  }
+
+                  echo("
+                </div>
               </div>
             </a>
           </div>");
@@ -126,3 +130,4 @@
       echo("</div>");
     }
   }
+?>

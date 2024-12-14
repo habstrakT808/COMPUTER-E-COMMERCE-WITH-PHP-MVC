@@ -10,23 +10,16 @@
 <body>
   <h1 class="page-title grid background-overlay" style="margin:1px;padding-top: 140px;padding-bottom: 140px;">About Us</h1>
   <div class="grid" style="flex-direction:column">
-    <div style="margin:0px;"><h2 class="white-text bold" style="padding-bottom:5px;border-bottom:3px solid red;">About OG Tech</h2></div>
+    <div style="margin:0px;"><h2 class="white-text bold" style="padding-bottom:5px;border-bottom:3px solid red;">About OG WAR RIG</h2></div>
     <div class="grey-text text-lighten-4">
       <p style="margin:0px 150px 0px 150px;font-size:25px;text-align:justify">
-        OG Tech was a Company that selling Computer Component which found by four university student and started its business at Malaysia on 1th January 2022.
-        Our passion towards computers makes us willing to introduce and provide the most advanced and recommeded products to our customers.
-        Besides selling Computer Component, our staff will also provide build guides for those who was new to build their PC. 
-        We will recommend and help you build your perfect PC according to your budget.
-        OG tech also continuously update prices from dozens of the most popular online retailers to help you to save your money.
+      OG WAR RIG is a company that sells computer components and was founded by four university students. It began its operations in Indonesia on 29 May, 2024. Discovered by Hafiyan Al Muqaffi Umary from Brawijaya University, Department of Informatics, on March 17, 2024. Our passion for computers drives us to introduce and provide the most advanced and recommended products to our customers. In addition to selling computer components, our staff also offers build guides for newcomers to PC building. We will recommend and assist you in building your perfect PC according to your budget. OG Tech also regularly updates prices from numerous popular online retailers to help you save money.
       </p>
     </div>
-    <div style="margin:0px;"><h2 class="white-text bold" style="padding-bottom:5px;border-bottom:3px solid red;">History of OG Tech</h2></div>
+    <div style="margin:0px;"><h2 class="white-text bold" style="padding-bottom:5px;border-bottom:3px solid red;">History of OG WAR RIG</h2></div>
     <div class="grey-text text-lighten-4">
       <p style="margin:0px 150px 0px 150px;font-size:25px;text-align:justify">
-      Early, OG Tech was only a manual store without website and database system, due to the pandamic, the sales had been affected significantly. 
-      Besides, records the information manually using file system was been elaminated in this advanced age. 
-      Therefore, OG Tech Company completely modernize the system from manual system to online system which is a web application system. 
-      However, OG Tech also reserved the old method of selling, which is selling at store, so the customers have two choices of methods to purchase our product. 
+      OG WAR RIG is a project from the Web Programming subject at the Department of Information Engineering, Faculty of Computer Science, Brawijaya University. It is a website for buying and selling computer parts created in PHP with MVC (Model View Controller) design patterns. Discovered by Hafiyan Al Muqaffi Umary from Brawijaya University, Department of Informatics, on March 17, 2024.
       </p>
     </div>
   </div>

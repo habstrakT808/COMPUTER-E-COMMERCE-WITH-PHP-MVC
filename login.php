@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>OG Tech PC - Login</title>
+<title>OG WAR RIG - Login</title>
+<style>
+    body {
+      background-image: url('static/images/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
 <?php include "header.php"; ?>
 
 <form method="POST" action="includes/login.inc.php">
